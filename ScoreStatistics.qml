@@ -919,7 +919,8 @@ pitch   tpc name    tpc name    tpc name
         Text {
             x: 170
             y: 134
-            text: qsTr("Tot. len.")
+            textFormat: Text.StyledText
+            text: qsTr("Tot.&nbsp;len.")
         }
         
         ///////////
@@ -938,7 +939,8 @@ pitch   tpc name    tpc name    tpc name
         Text {
             x: 420
             y: 134
-            text: qsTr("Tot. len.")
+            textFormat: Text.StyledText
+            text: qsTr("Tot.&nbsp;len.")
         }     
         
         ///////////
