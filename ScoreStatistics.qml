@@ -60,21 +60,21 @@ MuseScore {
     
     // Arrays containing the number of occurrences and the total duration of each pitch
     property var g_numOfPitches: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-	property var g_lenOfPitches: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-	
-	// Arrays containing the occurrences of each note duration and of each rest duration	
+    property var g_lenOfPitches: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    // Arrays containing the occurrences of each note duration and of each rest duration    
     property var g_noteLengths: []
-	property var g_restLengths: []
-	
-	// Array with the note names used for output
-	property var g_noteNames: ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"]
+    property var g_restLengths: []
+    
+    // Array with the note names used for output
+    property var g_noteNames: ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"]
 
     // Array with duration of each unit
     property var g_nDurations: [0, 30, 60, 120, 240, 480, 960, 1920]
     property var g_szDurNames: ["-", "1/64", "1/32", "1/16", "Quaver", "Crochet", "Half note", "Whole note"]
 
-	// NOTE: the original Score Statistics for MuseScore 1.0 had Crochet (1/4) and Quaver (1/8) mixed up.
-	// We have corrected it but we'll leave in the British terms for sentimental reasons.
+    // NOTE: the original Score Statistics for MuseScore 1.0 had Crochet (1/4) and Quaver (1/8) mixed up.
+    // We have corrected it but we'll leave in the British terms for sentimental reasons.
 
     
     
@@ -104,39 +104,39 @@ MuseScore {
     
     
     function createScoreStats() {
-    	// TEST: create text for score stats .csv
+        // TEST: create text for score stats .csv
         //var scorestats = "";
         scorestats = "";
         // get user-requested unit
-		var unit = g_nDurations[beatBase2.currentIndex + 1];
-		console.log("BB: " + beatBase2.currentIndex);
-		// output title and lenght unit
-	    // text += ("\"Statistics for '" + curScore.name + "'\"\n");
-		scorestats += ("\"Lenght unit:\",\"" +
-				g_szDurNames[beatBase2.currentIndex + 1] + "\"\n");
-		// output summary
-		scorestats += ("\"Parts:\"," + partCount + "\n");
-		scorestats += ("\"Pages:\"," + pageCount + "\n");
-		scorestats += ("\"Bars:\","  + measureCount  + "\n");
-	
-		// output pitch occurrences and durations
-		for(idx=0; idx < 12; idx++)
-			scorestats += ("\"" + g_noteNames[idx] + "\"," + g_numOfPitches[idx] + "," + (g_lenOfPitches[idx]/unit).toPrecision(6) + "\n");
-	
-		// output totals
-		scorestats += ("\"Total number of notes:\","   + noteCount + "\n");
-		scorestats += ("\"Total duration of notes:\"," + (noteLength/unit).toPrecision(6) + "\n");
-		scorestats += ("\"Total number of rests:\","   + restCount + "\n");
-		scorestats += ("\"Total duration of rests:\"," + (restLength/unit).toPrecision(6) + "\n");
-	
-		// output summary of note and rest length distribution
-		scorestats += ("\"Occurences of note lengths\"\n");
-		for(idx in g_noteLengths)
-			scorestats += ("" + (idx/unit).toPrecision(6) + "," + g_noteLengths[idx] + "\n");
-		scorestats += ("\"Occurences of rest lengths\"\n");
-		for(idx in g_restLengths)
-			scorestats += ("" + (idx/unit).toPrecision(6) + "," + g_restLengths[idx] + "\n");
-		/////////////////////
+        var unit = g_nDurations[beatBase2.currentIndex + 1];
+        console.log("BB: " + beatBase2.currentIndex);
+        // output title and lenght unit
+        // text += ("\"Statistics for '" + curScore.name + "'\"\n");
+        scorestats += ("\"Lenght unit:\",\"" +
+                g_szDurNames[beatBase2.currentIndex + 1] + "\"\n");
+        // output summary
+        scorestats += ("\"Parts:\"," + partCount + "\n");
+        scorestats += ("\"Pages:\"," + pageCount + "\n");
+        scorestats += ("\"Bars:\","  + measureCount  + "\n");
+    
+        // output pitch occurrences and durations
+        for(idx=0; idx < 12; idx++)
+            scorestats += ("\"" + g_noteNames[idx] + "\"," + g_numOfPitches[idx] + "," + (g_lenOfPitches[idx]/unit).toPrecision(6) + "\n");
+    
+        // output totals
+        scorestats += ("\"Total number of notes:\","   + noteCount + "\n");
+        scorestats += ("\"Total duration of notes:\"," + (noteLength/unit).toPrecision(6) + "\n");
+        scorestats += ("\"Total number of rests:\","   + restCount + "\n");
+        scorestats += ("\"Total duration of rests:\"," + (restLength/unit).toPrecision(6) + "\n");
+    
+        // output summary of note and rest length distribution
+        scorestats += ("\"Occurences of note lengths\"\n");
+        for(idx in g_noteLengths)
+            scorestats += ("" + (idx/unit).toPrecision(6) + "," + g_noteLengths[idx] + "\n");
+        scorestats += ("\"Occurences of rest lengths\"\n");
+        for(idx in g_restLengths)
+            scorestats += ("" + (idx/unit).toPrecision(6) + "," + g_restLengths[idx] + "\n");
+        /////////////////////
     }
     
     
@@ -226,13 +226,13 @@ MuseScore {
         
         ///////////
         // Arrays containing the number of occurrences and the total duration of each pitch
-		//var g_numOfPitches = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-		//var g_lenOfPitches = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-		//
-		// Arrays containing the occurrences of each note duration and of each rest duration
-		//var g_noteLengths = [];
-		//var g_restLengths = [];
-		///////////
+        //var g_numOfPitches = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        //var g_lenOfPitches = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        //
+        // Arrays containing the occurrences of each note duration and of each rest duration
+        //var g_noteLengths = [];
+        //var g_restLengths = [];
+        ///////////
         
         
         //var measureCount = 0;
@@ -412,10 +412,10 @@ MuseScore {
                         
                         // TEST:
                         var length = cursor.element.duration.ticks;
-						if (g_restLengths[length] == undefined)
-							g_restLengths[length] = 1;
-						else
-							g_restLengths[length]++;
+                        if (g_restLengths[length] == undefined)
+                            g_restLengths[length] = 1;
+                        else
+                            g_restLengths[length]++;
                     }   
                         
                         
@@ -463,11 +463,11 @@ MuseScore {
                             // TEST:
                             var length = cursor.element.duration.ticks;
                             if (g_noteLengths[length] == undefined)
-								g_noteLengths[length] = 1;
-							else
-								g_noteLengths[length]++;					
-								
-							
+                                g_noteLengths[length] = 1;
+                            else
+                                g_noteLengths[length]++;                    
+                                
+                            
                             
                             
 //                            // TEST:
@@ -501,7 +501,7 @@ MuseScore {
                             
                             // TEST:
                             g_numOfPitches[pitch%12]++;
-							g_lenOfPitches[pitch%12] += length;
+                            g_lenOfPitches[pitch%12] += length;
                             
                             
                             
@@ -685,8 +685,8 @@ pitch   tpc name    tpc name    tpc name
         
         // list note occurences
         for (idx=0; idx < 12; idx++) {
-        	eval("txtOcc"+idx).text = g_numOfPitches[idx];
-    	}
+            eval("txtOcc"+idx).text = g_numOfPitches[idx];
+        }
         
         
         // list note lengths
@@ -695,28 +695,28 @@ pitch   tpc name    tpc name    tpc name
         
         // list note lengths
         for (idx=0; idx < 12; idx++) {
-        	eval("txtLen"+idx).text = (g_lenOfPitches[idx]/unit).toPrecision(6);
-    	}
+            eval("txtLen"+idx).text = (g_lenOfPitches[idx]/unit).toPrecision(6);
+        }
         
         
         
         // list occurences of note lengths
         text = "";        
-        for (idx in g_noteLengths) {	
-			text += "" + (idx/unit).toPrecision(6) + ":\t" + g_noteLengths[idx] + "\n";
-		}
-		myTextBox1.text = text;
-		
-		
-		// list occurences of rest lengths
-		text = "";
-		for (idx in g_restLengths) {	
-			text += "" + (idx/unit).toPrecision(6) + ":\t" + g_restLengths[idx] + "\n";
-		}
-		myTextBox2.text = text;
-		
-		
-		
+        for (idx in g_noteLengths) {    
+            text += "" + (idx/unit).toPrecision(6) + ":\t" + g_noteLengths[idx] + "\n";
+        }
+        myTextBox1.text = text;
+        
+        
+        // list occurences of rest lengths
+        text = "";
+        for (idx in g_restLengths) {    
+            text += "" + (idx/unit).toPrecision(6) + ":\t" + g_restLengths[idx] + "\n";
+        }
+        myTextBox2.text = text;
+        
+        
+        
         
         
         // TEST: fill table YESS
@@ -811,34 +811,34 @@ pitch   tpc name    tpc name    tpc name
                     //helloQml3.text = 'Duration of notes:&nbsp;&nbsp;' + (noteLength/unit).toPrecision(6);
                     //helloQml7.text = 'Duration of rests:&nbsp;&nbsp;' + (restLength/unit).toPrecision(6);
         
-			        //helloQmlCLength.text =   (noteLengthC/unit).toPrecision(6);
-			        //helloQmlCisLength.text = (noteLengthCis/unit).toPrecision(6);
-			        
-			        var idx = 0;
-			        var text = "";
-			        
-			        // relist note lengths
-			        for (idx=0; idx < 12; idx++) {
-			        	eval("txtLen"+idx).text = (g_lenOfPitches[idx]/unit).toPrecision(6);
-			    	}
-			        
-					// relist occurences of note lengths
-					text = "";			        
-			        for (idx in g_noteLengths) {	
-						text += "" + (idx/unit).toPrecision(6) + ":\t" + g_noteLengths[idx] + "\n";
-					}
-					myTextBox1.text = text;
-					
-					// relist occurences of rest lengths
-					text = "";
-					for (idx in g_restLengths) {	
-						text += "" + (idx/unit).toPrecision(6) + ":\t" + g_restLengths[idx] + "\n";
-					}
-					myTextBox2.text = text;
-					
-					// relist duration of notes and rests
-					helloQml3.text = 'Duration of notes:&nbsp;&nbsp;' + (noteLength/unit).toPrecision(6);
-        			helloQml7.text = 'Duration of rests:&nbsp;&nbsp;' + (restLength/unit).toPrecision(6);
+                    //helloQmlCLength.text =   (noteLengthC/unit).toPrecision(6);
+                    //helloQmlCisLength.text = (noteLengthCis/unit).toPrecision(6);
+                    
+                    var idx = 0;
+                    var text = "";
+                    
+                    // relist note lengths
+                    for (idx=0; idx < 12; idx++) {
+                        eval("txtLen"+idx).text = (g_lenOfPitches[idx]/unit).toPrecision(6);
+                    }
+                    
+                    // relist occurences of note lengths
+                    text = "";                  
+                    for (idx in g_noteLengths) {    
+                        text += "" + (idx/unit).toPrecision(6) + ":\t" + g_noteLengths[idx] + "\n";
+                    }
+                    myTextBox1.text = text;
+                    
+                    // relist occurences of rest lengths
+                    text = "";
+                    for (idx in g_restLengths) {    
+                        text += "" + (idx/unit).toPrecision(6) + ":\t" + g_restLengths[idx] + "\n";
+                    }
+                    myTextBox2.text = text;
+                    
+                    // relist duration of notes and rests
+                    helloQml3.text = 'Duration of notes:&nbsp;&nbsp;' + (noteLength/unit).toPrecision(6);
+                    helloQml7.text = 'Duration of rests:&nbsp;&nbsp;' + (restLength/unit).toPrecision(6);
               }
         }
         
@@ -861,7 +861,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Label {
-        	//anchors.horizontalCenter: horizontalCenter
+            //anchors.horizontalCenter: horizontalCenter
             x: 210
             y: 60
             text: qsTr("Summary")
@@ -896,7 +896,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
          Label {
-        	//anchors.horizontalCenter: horizontalCenter
+            //anchors.horizontalCenter: horizontalCenter
             x: 215
             y: 110
             text: qsTr("Pitches")
@@ -1325,45 +1325,45 @@ pitch   tpc name    tpc name    tpc name
         }
         
         TextArea 
-	    {
-		    id: myTextBox1
-		    x: 20
+        {
+            id: myTextBox1
+            x: 20
             y: 314
-		    //font.pointSize: 10
-		    //anchors.top: window.top
-		    //anchors.left: window.left
-		    //anchors.right: window.right
-		    anchors.topMargin: 35
-		    anchors.bottomMargin: 10
-		    anchors.leftMargin: 10
-		    anchors.rightMargin: 10
-		    width: 225
-		    height: 150
-		    wrapMode: TextEdit.WrapAnywhere
-		    textFormat: TextEdit.PlainText
-	    }
-	    
-	    TextArea 
-	    {
-		    id: myTextBox2
-		    x: 255
+            //font.pointSize: 10
+            //anchors.top: window.top
+            //anchors.left: window.left
+            //anchors.right: window.right
+            anchors.topMargin: 35
+            anchors.bottomMargin: 10
+            anchors.leftMargin: 10
+            anchors.rightMargin: 10
+            width: 225
+            height: 150
+            wrapMode: TextEdit.WrapAnywhere
+            textFormat: TextEdit.PlainText
+        }
+        
+        TextArea 
+        {
+            id: myTextBox2
+            x: 255
             y: 314
-		    //font.pointSize: 10
-		    //anchors.top: window.top
-		    //anchors.left: window.left
-		    //anchors.right: window.right
-		    anchors.topMargin: 35
-		    anchors.bottomMargin: 10
-		    anchors.leftMargin: 10
-		    anchors.rightMargin: 10
-		    width: 225
-		    height: 150
-		    wrapMode: TextEdit.WrapAnywhere
-		    textFormat: TextEdit.PlainText
-	    }
-	    
-	    Label {
-        	//anchors.horizontalCenter: horizontalCenter
+            //font.pointSize: 10
+            //anchors.top: window.top
+            //anchors.left: window.left
+            //anchors.right: window.right
+            anchors.topMargin: 35
+            anchors.bottomMargin: 10
+            anchors.leftMargin: 10
+            anchors.rightMargin: 10
+            width: 225
+            height: 150
+            wrapMode: TextEdit.WrapAnywhere
+            textFormat: TextEdit.PlainText
+        }
+        
+        Label {
+            //anchors.horizontalCenter: horizontalCenter
             x: 224
             y: 474
             text: qsTr("Totals")
@@ -1406,7 +1406,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("Hello Qml")
         }
         
-		///////////
+        ///////////
         Rectangle {
           color: "grey"
           //anchors.horizontalCenter: parent.horizontalCenter
@@ -1426,7 +1426,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
  
- 		Text {
+        Text {
             x: 108
             y: 554
             text: qsTr("(using")
@@ -1467,8 +1467,8 @@ pitch   tpc name    tpc name    tpc name
               }
               onCurrentIndexChanged: {
                     //var unit = beatBase2.model.get(currentIndex).unit;
-        	  }
-		}
+              }
+        }
         
         
         
