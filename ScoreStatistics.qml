@@ -5,7 +5,7 @@
 //
 //  Collects and lists statistics about the current score
 //
-//  Version 1.0
+//  Version 1.1
 //
 //  Copyright (C) 2021 rgos
 //=============================================================================
@@ -658,7 +658,8 @@ pitch   tpc name    tpc name    tpc name
         
         
         // TODO: get from combo box at startup via ini file
-        var unit = 480;
+        // DONE
+        var unit = g_nDurations[beatBase1.currentIndex + 1]; //480;
         
         
         //helloQml.text = "QQQ";
