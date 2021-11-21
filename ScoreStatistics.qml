@@ -659,7 +659,7 @@ pitch   tpc name    tpc name    tpc name
         
         // TODO: get from combo box at startup via ini file
         // DONE
-        var unit = g_nDurations[beatBase1.currentIndex + 1]; //480;
+        var unit = g_nDurations[beatBase.currentIndex + 1]; //480;
         
         
         //helloQml.text = "QQQ";
