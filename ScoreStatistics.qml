@@ -81,7 +81,7 @@ MuseScore {
     //function saveNotelist() {
     function saveScorestats() {
         // Create stats
-        createScoreStats();
+        createScorestats();
         
         var rc = outfile.write(scorestats);
         if (rc) {
@@ -103,7 +103,7 @@ MuseScore {
     }
     
     
-    function createScoreStats() {
+    function createScorestats() {
         // TEST: create text for score stats .csv
         //var scorestats = "";
         scorestats = "";
@@ -780,12 +780,12 @@ pitch   tpc name    tpc name    tpc name
         }
         
         ComboBox {
-              id: beatBase
-              width: 80             
-              x: 196
-              y: 15
-              model: ListModel {
-                    id: beatBaseList
+            id: beatBase
+            width: 80             
+            x: 196
+            y: 15
+            model: ListModel {
+                id: beatBaseList
                     //mult is a tempo-multiplier compared to a crotchet
                     ListElement { text: '64th';    unit: 30   } 
                     ListElement { text: '32th';    unit: 60   } 
@@ -794,71 +794,71 @@ pitch   tpc name    tpc name    tpc name
                     ListElement { text: 'Quarter'; unit: 480  } // 1/4
                     ListElement { text: 'Half';    unit: 960  }
                     ListElement { text: 'Whole';   unit: 1920 }
-              }
-              currentIndex: 4
-              //implicitHeight: 42
-              style: ComboBoxStyle {
-                    //textColor: '#000000'
-                    //selectedTextColor: '#000000'
-                    //font.family: 'Leland'
-                    //font.pointSize: 18
-                    padding.top: 5
-                    padding.bottom: 5
-              }
-              onCurrentIndexChanged: { // update the value fields to match the new beatBase
-                    var unit = beatBase.model.get(currentIndex).unit;
-                    
-                    // relist lengths
-                    //helloQml3.text = 'Duration of notes:&nbsp;&nbsp;' + (noteLength/unit).toPrecision(6);
-                    //helloQml7.text = 'Duration of rests:&nbsp;&nbsp;' + (restLength/unit).toPrecision(6);
+            }
+            currentIndex: 4
+            //implicitHeight: 42
+            style: ComboBoxStyle {
+                //textColor: '#000000'
+                //selectedTextColor: '#000000'
+                //font.family: 'Leland'
+                //font.pointSize: 18
+                padding.top: 5
+                padding.bottom: 5
+            }
+            onCurrentIndexChanged: { // update the value fields to match the new beatBase
+                var unit = beatBase.model.get(currentIndex).unit;
+                
+                // relist lengths
+                //helloQml3.text = 'Duration of notes:&nbsp;&nbsp;' + (noteLength/unit).toPrecision(6);
+                //helloQml7.text = 'Duration of rests:&nbsp;&nbsp;' + (restLength/unit).toPrecision(6);
         
-                    //helloQmlCLength.text =   (noteLengthC/unit).toPrecision(6);
-                    //helloQmlCisLength.text = (noteLengthCis/unit).toPrecision(6);
-                    
-                    var idx = 0;
-                    var text = "";
-                    
-                    // relist note lengths
-                    for (idx=0; idx < 12; idx++) {
-                        eval("txtLen"+idx).text = (g_lenOfPitches[idx]/unit).toPrecision(6);
-                    }
-                    
-                    // relist occurences of note lengths
-                    text = "";                  
-                    for (idx in g_noteLengths) {    
-                        text += "" + (idx/unit).toPrecision(6) + ":\t" + g_noteLengths[idx] + "\n";
-                    }
-                    myTextBox1.text = text;
-                    
-                    // relist occurences of rest lengths
-                    text = "";
-                    for (idx in g_restLengths) {    
-                        text += "" + (idx/unit).toPrecision(6) + ":\t" + g_restLengths[idx] + "\n";
-                    }
-                    myTextBox2.text = text;
-                    
-                    // relist duration of notes and rests
-                    helloQml3.text = 'Duration of notes:&nbsp;&nbsp;' + (noteLength/unit).toPrecision(6);
-                    helloQml7.text = 'Duration of rests:&nbsp;&nbsp;' + (restLength/unit).toPrecision(6);
-              }
+                //helloQmlCLength.text =   (noteLengthC/unit).toPrecision(6);
+                //helloQmlCisLength.text = (noteLengthCis/unit).toPrecision(6);
+                
+                var idx = 0;
+                var text = "";
+                
+                // relist note lengths
+                for (idx=0; idx < 12; idx++) {
+                    eval("txtLen"+idx).text = (g_lenOfPitches[idx]/unit).toPrecision(6);
+                }
+                
+                // relist occurences of note lengths
+                text = "";                  
+                for (idx in g_noteLengths) {    
+                    text += "" + (idx/unit).toPrecision(6) + ":\t" + g_noteLengths[idx] + "\n";
+                }
+                myTextBox1.text = text;
+                
+                // relist occurences of rest lengths
+                text = "";
+                for (idx in g_restLengths) {    
+                    text += "" + (idx/unit).toPrecision(6) + ":\t" + g_restLengths[idx] + "\n";
+                }
+                myTextBox2.text = text;
+                
+                // relist duration of notes and rests
+                helloQml3.text = 'Duration of notes:&nbsp;&nbsp;' + (noteLength/unit).toPrecision(6);
+                helloQml7.text = 'Duration of rests:&nbsp;&nbsp;' + (restLength/unit).toPrecision(6);
+            }
         }
         
         Rectangle {
-          color: "grey"
-          //anchors.horizontalCenter: parent.horizontalCenter
-          height: 1
-          width: 460          
-          x: 20
-          y: 48
+            color: "grey"
+            //anchors.horizontalCenter: parent.horizontalCenter
+            height: 1
+            width: 460          
+            x: 20
+            y: 48
         }
         
         Rectangle {
-          color: "white"
-          //anchors.horizontalCenter: parent.horizontalCenter
-          height: 1
-          width: 460          
-          x: 20
-          y: 49
+            color: "white"
+            //anchors.horizontalCenter: parent.horizontalCenter
+            height: 1
+            width: 460          
+            x: 20
+            y: 49
         }
         
         Label {
@@ -955,7 +955,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc0 //helloQmlC
+            id: txtOcc0 //helloQmlC
             //anchors.centerIn: parent
             x: 90
             y: 154
@@ -965,7 +965,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen0 //helloQmlCLength
+            id: txtLen0 //helloQmlCLength
             //anchors.centerIn: parent
             x: 174
             y: 154
@@ -984,7 +984,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc1 //helloQmlCis
+            id: txtOcc1 //helloQmlCis
             //anchors.centerIn: parent
             x: 90
             y: 174
@@ -994,7 +994,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen1 //helloQmlCisLength
+            id: txtLen1 //helloQmlCisLength
             //anchors.centerIn: parent
             x: 174
             y: 174
@@ -1013,7 +1013,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc2 //helloQmlD
+            id: txtOcc2 //helloQmlD
             //anchors.centerIn: parent
             x: 90
             y: 194
@@ -1023,7 +1023,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen2 //helloQmlDLength
+            id: txtLen2 //helloQmlDLength
             //anchors.centerIn: parent
             x: 174
             y: 194
@@ -1042,7 +1042,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc3 //helloQmlDis
+            id: txtOcc3 //helloQmlDis
             //anchors.centerIn: parent
             x: 90
             y: 214
@@ -1052,7 +1052,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen3 //helloQmlDisLength
+            id: txtLen3 //helloQmlDisLength
             //anchors.centerIn: parent
             x: 174
             y: 214
@@ -1071,7 +1071,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc4 //helloQmlE
+            id: txtOcc4 //helloQmlE
             //anchors.centerIn: parent
             x: 90
             y: 234
@@ -1081,7 +1081,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen4 //helloQmlELength
+            id: txtLen4 //helloQmlELength
             //anchors.centerIn: parent
             x: 174
             y: 234
@@ -1100,7 +1100,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc5 //helloQmlF
+            id: txtOcc5 //helloQmlF
             //anchors.centerIn: parent
             x: 90
             y: 254
@@ -1110,7 +1110,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen5 //helloQmlFLength
+            id: txtLen5 //helloQmlFLength
             //anchors.centerIn: parent
             x: 174
             y: 254            
@@ -1130,7 +1130,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc6 //helloQmlFis
+            id: txtOcc6 //helloQmlFis
             //anchors.centerIn: parent
             x: 340
             y: 154
@@ -1140,7 +1140,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen6 //helloQmlFisLength
+            id: txtLen6 //helloQmlFisLength
             //anchors.centerIn: parent
             x: 426
             y: 154
@@ -1159,7 +1159,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc7 //helloQmlG
+            id: txtOcc7 //helloQmlG
             //anchors.centerIn: parent
             x: 340
             y: 174
@@ -1169,7 +1169,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen7 //helloQmlGLength
+            id: txtLen7 //helloQmlGLength
             //anchors.centerIn: parent
             x: 426
             y: 174
@@ -1188,7 +1188,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc8 //helloQmlGis
+            id: txtOcc8 //helloQmlGis
             //anchors.centerIn: parent
             x: 340
             y: 194
@@ -1198,7 +1198,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen8 //helloQmlGisLength
+            id: txtLen8 //helloQmlGisLength
             //anchors.centerIn: parent
             x: 426
             y: 194
@@ -1217,7 +1217,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc9 //helloQmlA
+            id: txtOcc9 //helloQmlA
             //anchors.centerIn: parent
             x: 340
             y: 214
@@ -1227,7 +1227,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen9 //helloQmlALength
+            id: txtLen9 //helloQmlALength
             //anchors.centerIn: parent
             x: 426
             y: 214
@@ -1246,7 +1246,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtOcc10 //helloQmlAis
+            id: txtOcc10 //helloQmlAis
             //anchors.centerIn: parent
             x: 340
             y: 234
@@ -1256,7 +1256,7 @@ pitch   tpc name    tpc name    tpc name
         }
         
         Text {
-          id: txtLen10 //helloQmlAisLength
+            id: txtLen10 //helloQmlAisLength
             //anchors.centerIn: parent
             x: 426
             y: 234
@@ -1296,21 +1296,21 @@ pitch   tpc name    tpc name    tpc name
         
         ///////////
         Rectangle {
-          color: "grey"
-          //anchors.horizontalCenter: parent.horizontalCenter
-          height: 1
-          width: 460          
-          x: 20
-          y: 280
+            color: "grey"
+            //anchors.horizontalCenter: parent.horizontalCenter
+            height: 1
+            width: 460          
+            x: 20
+            y: 280
         }
         
         Rectangle {
-          color: "white"
-          //anchors.horizontalCenter: parent.horizontalCenter
-          height: 1
-          width: 460          
-          x: 20
-          y: 281
+            color: "white"
+            //anchors.horizontalCenter: parent.horizontalCenter
+            height: 1
+            width: 460          
+            x: 20
+            y: 281
         }
         
         Label {
@@ -1442,13 +1442,13 @@ pitch   tpc name    tpc name    tpc name
         }
         
         ComboBox {
-              id: beatBase2
-              width: 80
-              height: 24            
-              x: 152
-              y: 550
-              model: ListModel {
-                    id: beatBaseList2
+            id: beatBase2
+            width: 80
+            height: 24            
+            x: 152
+            y: 550
+            model: ListModel {
+                id: beatBaseList2
                     //mult is a tempo-multiplier compared to a crotchet 
                     ListElement { text: '64th';    unit: 30   } 
                     ListElement { text: '32th';    unit: 60   } 
@@ -1457,20 +1457,20 @@ pitch   tpc name    tpc name    tpc name
                     ListElement { text: 'Quarter'; unit: 480  } // 1/4
                     ListElement { text: 'Half';    unit: 960  }
                     ListElement { text: 'Whole';   unit: 1920 }
-              }
-              currentIndex: 4
-              //implicitHeight: 42
-              style: ComboBoxStyle {
-                    //textColor: '#000000'
-                    //selectedTextColor: '#000000'
-                    //font.family: 'Leland'
-                    //font.pointSize: 18
-                    padding.top: 5
-                    padding.bottom: 5
-              }
-              onCurrentIndexChanged: {
-                    //var unit = beatBase2.model.get(currentIndex).unit;
-              }
+            }
+            currentIndex: 4
+            //implicitHeight: 42
+            style: ComboBoxStyle {
+                //textColor: '#000000'
+                //selectedTextColor: '#000000'
+                //font.family: 'Leland'
+                //font.pointSize: 18
+                padding.top: 5
+                padding.bottom: 5
+            }
+            onCurrentIndexChanged: {
+                //var unit = beatBase2.model.get(currentIndex).unit;
+            }
         }
         
         
