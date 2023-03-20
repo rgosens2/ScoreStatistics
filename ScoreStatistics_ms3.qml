@@ -771,7 +771,7 @@ pitch   tpc name    tpc name    tpc name
         //anchors.margins: 10
    
         
-       Text {
+       Label {
             id: txt1
             //anchors.centerIn: parent
             x: 20
@@ -869,7 +869,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: helloQml4
             //anchors.centerIn: parent
             x: 20
@@ -878,7 +878,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("Hello Qml")
         }
         
-        Text {
+        Label {
             id: helloQml5
             //anchors.centerIn: parent
             x: 200
@@ -887,7 +887,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("Hello Qml")
         }
         
-        Text {
+        Label {
             id: helloQml1
             //anchors.centerIn: parent
             x: 360
@@ -905,19 +905,19 @@ pitch   tpc name    tpc name    tpc name
         }
         
         ///////////
-        Text {
+        Label {
             x: 20
             y: 134
             text: qsTr("Pitch")
         }
         
-        Text {
+        Label {
             x: 92
             y: 134
             text: qsTr("Occur.")
         }
         
-        Text {
+        Label {
             x: 170
             y: 134
             textFormat: Text.StyledText
@@ -925,19 +925,19 @@ pitch   tpc name    tpc name    tpc name
         }
         
         ///////////
-        Text {
+        Label {
             x: 270
             y: 134
             text: qsTr("Pitch")
         }
         
-        Text {
+        Label {
             x: 342
             y: 134
             text: qsTr("Occur.")
         }
         
-        Text {
+        Label {
             x: 420
             y: 134
             textFormat: Text.StyledText
@@ -954,7 +954,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc0 //helloQmlC
             //anchors.centerIn: parent
             x: 90
@@ -964,7 +964,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("66")
         }
         
-        Text {
+        Label {
             id: txtLen0 //helloQmlCLength
             //anchors.centerIn: parent
             x: 174
@@ -983,7 +983,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc1 //helloQmlCis
             //anchors.centerIn: parent
             x: 90
@@ -993,7 +993,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("666")
         }
         
-        Text {
+        Label {
             id: txtLen1 //helloQmlCisLength
             //anchors.centerIn: parent
             x: 174
@@ -1012,7 +1012,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc2 //helloQmlD
             //anchors.centerIn: parent
             x: 90
@@ -1022,7 +1022,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("66")
         }
         
-        Text {
+        Label {
             id: txtLen2 //helloQmlDLength
             //anchors.centerIn: parent
             x: 174
@@ -1041,7 +1041,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc3 //helloQmlDis
             //anchors.centerIn: parent
             x: 90
@@ -1051,7 +1051,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("666")
         }
         
-        Text {
+        Label {
             id: txtLen3 //helloQmlDisLength
             //anchors.centerIn: parent
             x: 174
@@ -1070,7 +1070,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc4 //helloQmlE
             //anchors.centerIn: parent
             x: 90
@@ -1080,7 +1080,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("66")
         }
         
-        Text {
+        Label {
             id: txtLen4 //helloQmlELength
             //anchors.centerIn: parent
             x: 174
@@ -1099,7 +1099,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc5 //helloQmlF
             //anchors.centerIn: parent
             x: 90
@@ -1109,7 +1109,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("666")
         }
         
-        Text {
+        Label {
             id: txtLen5 //helloQmlFLength
             //anchors.centerIn: parent
             x: 174
@@ -1129,7 +1129,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc6 //helloQmlFis
             //anchors.centerIn: parent
             x: 340
@@ -1139,7 +1139,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("66")
         }
         
-        Text {
+        Label {
             id: txtLen6 //helloQmlFisLength
             //anchors.centerIn: parent
             x: 426
@@ -1158,7 +1158,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc7 //helloQmlG
             //anchors.centerIn: parent
             x: 340
@@ -1168,7 +1168,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("666")
         }
         
-        Text {
+        Label {
             id: txtLen7 //helloQmlGLength
             //anchors.centerIn: parent
             x: 426
@@ -1187,7 +1187,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc8 //helloQmlGis
             //anchors.centerIn: parent
             x: 340
@@ -1197,7 +1197,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("66")
         }
         
-        Text {
+        Label {
             id: txtLen8 //helloQmlGisLength
             //anchors.centerIn: parent
             x: 426
@@ -1216,7 +1216,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc9 //helloQmlA
             //anchors.centerIn: parent
             x: 340
@@ -1226,7 +1226,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("666")
         }
         
-        Text {
+        Label {
             id: txtLen9 //helloQmlALength
             //anchors.centerIn: parent
             x: 426
@@ -1245,7 +1245,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: txtOcc10 //helloQmlAis
             //anchors.centerIn: parent
             x: 340
@@ -1255,7 +1255,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("66")
         }
         
-        Text {
+        Label {
             id: txtLen10 //helloQmlAisLength
             //anchors.centerIn: parent
             x: 426
@@ -1274,7 +1274,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
           id: txtOcc11 //helloQmlB
             //anchors.centerIn: parent
             x: 340
@@ -1284,7 +1284,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("666")
         }
         
-        Text {
+        Label {
           id: txtLen11 //helloQmlBLength
             //anchors.centerIn: parent
             x: 426
@@ -1373,7 +1373,7 @@ pitch   tpc name    tpc name    tpc name
             font.bold: true
         }
         
-        Text {
+        Label {
             id: helloQml2
             //anchors.centerIn: parent
             x: 20
@@ -1382,7 +1382,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("Hello Qml")
         }
         
-        Text {
+        Label {
             id: helloQml3
             //anchors.centerIn: parent
             x: 20
@@ -1391,7 +1391,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("Hello Qml")
         }
         
-        Text {
+        Label {
             id: helloQml6
             //anchors.centerIn: parent
             x: 250
@@ -1400,7 +1400,7 @@ pitch   tpc name    tpc name    tpc name
             text: qsTr("Hello Qml")
         }
         
-        Text {
+        Label {
             id: helloQml7
             //anchors.centerIn: parent
             x: 250
@@ -1429,13 +1429,13 @@ pitch   tpc name    tpc name    tpc name
         }
         
  
-        Text {
+        Label {
             x: 108
             y: 554
             text: qsTr("(using")
         }
         
-        Text {
+        Label {
             x: 238
             y: 554
             text: qsTr("as a unit)")
@@ -1521,7 +1521,7 @@ pitch   tpc name    tpc name    tpc name
             backgroundVisible: true
             headerVisible: true
             itemDelegate: Item {
-                Text {                      
+                Label {                      
     //              anchors.verticalCenter: parent.verticalCenter
     //              color: "blue"
     //              if (enabledCheck.checked = false)
@@ -1557,7 +1557,7 @@ pitch   tpc name    tpc name    tpc name
         }
 
 
-        Text {
+        Label {
             id: txtSaved
             //anchors.centerIn: parent
             x: 20
