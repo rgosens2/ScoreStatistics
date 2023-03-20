@@ -93,6 +93,7 @@ MuseScore {
     //function saveNotelist() {
     function saveScorestats() {
         // Create stats
+        // HELL: something goes wrong here when creating scorestats
         createScorestats();
         
         var rc = outfile.write(scorestats);
@@ -116,6 +117,7 @@ MuseScore {
     
     
     function createScorestats() {
+        // HELL: something goes wrong here
         // TEST: create text for score stats .csv
         //var scorestats = "";
         scorestats = "";
@@ -131,8 +133,9 @@ MuseScore {
         scorestats += ("\"Pages:\"," + pageCount + "\n");
         scorestats += ("\"Bars:\","  + measureCount  + "\n");
     
+        // HELL: things went wrong here because we omitted var before idx=0. MS3 accepted it, MS4 not. Sucks!!!
         // output pitch occurrences and durations
-        for(idx=0; idx < 12; idx++)
+        for(var idx=0; idx < 12; idx++)
             scorestats += ("\"" + g_noteNames[idx] + "\"," + g_numOfPitches[idx] + "," + (g_lenOfPitches[idx]/unit).toPrecision(6) + "\n");
     
         // output totals
